@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSafe | Solusi Keamanan Siber Terpercaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .custom-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .custom-card:hover {
+            border-color: #6366f1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #4338ca;
+            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+            transform: translateY(-1px);
+        }
+
+        .nav-link {
+            color: #64748b;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #4f46e5;
+        }
+
+        .hidden-page {
+            display: none;
+        }
+        
+        .active-link {
+            color: #4f46e5 !important;
+            font-weight: 700;
+        }
+
+        .prose p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+        .prose h3 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- [BAGIAN 1: NAVIGATION BAR] -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-md">
+                        <i class="fas fa-shield-halved text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-slate-900">
+                        CyberSafe
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a onclick="showPage('home')" id="nav-home" class="nav-link active-link">Beranda</a>
+                    <a onclick="showPage('fitur')" id="nav-fitur" class="nav-link">Fitur</a>
+                    <a onclick="scrollToSection('layanan')" class="nav-link">Layanan</a>
+                    <a onclick="scrollToSection('testimoni')" class="nav-link">Testimoni</a>
+                    <a onclick="scrollToSection('faq')" class="nav-link">FAQ</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button class="hidden md:block px-6 py-2.5 rounded-full btn-primary text-sm font-semibold">
+                        Konsultasi Gratis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- [PAGE: HOME] -->
+    <main id="page-home">
+        <!-- [BAGIAN 2: HERO SECTION] -->
+        <header class="pt-40 pb-20 px-4 bg-slate-50">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs font-bold uppercase tracking-widest">
+                    🛡️ Pertahanan Digital Modern
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-slate-900">
+                    Satu Celah Kecil Bisa Berakibat Fatal.<br>
+                    <span class="text-indigo-600 font-bold">Amankan Bisnis Anda Sekarang.</span>
+                </h1>
+                <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    CyberSafe menghadirkan pertahanan siber berlapis untuk melindungi data sensitif, reputasi, dan kelangsungan bisnis Anda dari serangan hacker yang kian canggih.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <button class="px-8 py-4 rounded-full btn-primary text-lg font-bold shadow-lg">
+                        Amankan Sistem Saya Sekarang
+                    </button>
+                    <button onclick="showPage('fitur')" class="px-8 py-4 rounded-full border border-slate-300 bg-white hover:bg-slate-50 transition text-slate-700 text-lg font-bold">
+                        Lihat Fitur Unggulan
+                    </button>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="flex text-yellow-500 gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-slate-500 font-medium">"Dipercaya oleh 200+ Perusahaan di Indonesia"</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- [BAGIAN 3: PROBLEM AGITATION] -->
+        <section class="py-24 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Apakah Anda Yakin Data Anda Aman Hari Ini?</h2>
+                    <p class="text-slate-500">Di era digital, ancaman bukan lagi "jika", tapi "kapan".</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 custom-card rounded-2xl">
+                        <i class="fas fa-lock text-red-500 text-4xl mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">Ransomware</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Hacker mengunci data Anda dan meminta tebusan miliaran. Sekali terkunci, sulit untuk kembali.</p>
+                    </div>
+                    <div class="p-8 custom-card rounded-2xl">
+                        <i class="fas fa-user-ninja text-orange-500 text-4xl mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">Phishing</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Karyawan Anda tidak sengaja memberikan akses ke orang asing melalui email atau link palsu.</p>
+                    </div>
+                    <div class="p-8 custom-card rounded-2xl">
+                        <i class="fas fa-database text-blue-500 text-4xl mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">Data Breach</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Kebocoran data pelanggan yang berujung pada tuntutan hukum dan rusaknya nama baik secara permanen.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-12 text-slate-500 font-semibold italic">"Jangan tunggu sampai layar komputer Anda berubah menjadi pesan tebusan."</p>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 4: FEATURES & SERVICES] -->
+        <section id="layanan" class="py-24 px-4 bg-slate-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Solusi Keamanan Menyeluruh Tanpa Celah.</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="custom-card p-8 rounded-2xl bg-white">
+                        <i class="fas fa-magnifying-glass-chart text-indigo-600 text-3xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4">Vulnerability Assessment</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Kami memindai seluruh sistem Anda untuk menemukan lubang keamanan sebelum dimanfaatkan pihak luar.</p>
+                    </div>
+                    <div class="custom-card p-8 rounded-2xl bg-white">
+                        <i class="fas fa-user-secret text-indigo-600 text-3xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4">Penetration Testing</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Simulasi serangan nyata untuk menguji seberapa kuat pertahanan digital Anda.</p>
+                    </div>
+                    <div class="custom-card p-8 rounded-2xl bg-white">
+                        <i class="fas fa-display text-indigo-600 text-3xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4">24/7 Managed Security</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Tim ahli kami memantau jaringan Anda setiap detik untuk mendeteksi aktivitas mencurigakan secara real-time.</p>
+                    </div>
+                    <div class="custom-card p-8 rounded-2xl bg-white">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-3xl mb-6 block"></i>
+                        <h4 class="text-xl font-bold mb-4">Cyber Awareness Training</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Edukasi karyawan Anda agar menjadi garda depan pertahanan melawan teknik tipu daya hacker.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 5: WHY CHOOSE US (USP)] -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-slate-900">Mengapa Memilih CyberSafe?</h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="flex gap-6">
+                        <div class="shrink-0 w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center text-white"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Sertifikasi Internasional</h4>
+                            <p class="text-slate-500 text-sm">Tim kami terdiri dari tenaga ahli bersertifikat CEH, CISSP, dan CISM.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="shrink-0 w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center text-white"><i class="fas fa-brain"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Teknologi AI-Driven</h4>
+                            <p class="text-slate-500 text-sm">Kami menggunakan AI untuk mendeteksi pola serangan baru yang belum pernah ada sebelumnya.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="shrink-0 w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center text-white"><i class="fas fa-file-contract"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Laporan Komprehensif</h4>
+                            <p class="text-slate-500 text-sm">Anda tidak hanya dapat proteksi, tapi juga laporan detail yang mudah dipahami manajemen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 6: TESTIMONI] -->
+        <section id="testimoni" class="py-24 px-4 bg-slate-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-16">Suara Dari Partner Kami</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="custom-card p-10 rounded-2xl border-l-4 border-l-indigo-600">
+                        <p class="text-lg italic mb-6">"CyberSafe menemukan celah kritikal di gerbang pembayaran kami dalam waktu kurang dari 24 jam. Layanan yang sangat profesional."</p>
+                        <p class="font-bold">Budi Setiawan</p>
+                        <p class="text-sm text-indigo-600">CTO Fintech X</p>
+                    </div>
+                    <div class="custom-card p-10 rounded-2xl border-l-4 border-l-indigo-600">
+                        <p class="text-lg italic mb-6">"Investasi terbaik tahun ini. Kami merasa jauh lebih tenang fokus pada bisnis karena keamanan digital sudah ditangani ahlinya."</p>
+                        <p class="font-bold">Santi</p>
+                        <p class="text-sm text-indigo-600">Founder E-commerce Y</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 8: PRICING] -->
+        <section class="py-24 px-4 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-16">Pilih Perlindungan yang Tepat</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="custom-card p-8 rounded-3xl text-center">
+                        <h4 class="text-xl font-bold mb-4">Starter Plan</h4>
+                        <p class="text-slate-500 mb-6">Audit dasar & Pemindaian Bulanan</p>
+                        <button class="w-full py-3 rounded-xl border border-indigo-600 text-indigo-600 font-bold">Pilih Starter</button>
+                    </div>
+                    <div class="custom-card p-8 rounded-3xl text-center border-indigo-600 border-2 bg-indigo-50/30">
+                        <h4 class="text-xl font-bold mb-4">Business Plan</h4>
+                        <p class="text-slate-500 mb-6">Penetration Testing, 24/7 Monitoring, & Respon Insiden</p>
+                        <button class="w-full py-3 rounded-xl btn-primary font-bold">Mulai Sekarang</button>
+                    </div>
+                    <div class="custom-card p-8 rounded-3xl text-center">
+                        <h4 class="text-xl font-bold mb-4">Enterprise Plan</h4>
+                        <p class="text-slate-500 mb-6">Solusi kustom penuh sesuai kebutuhan infrastruktur</p>
+                        <button class="w-full py-3 rounded-xl border border-indigo-600 text-indigo-600 font-bold">Hubungi Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 7: FAQ] -->
+        <section id="faq" class="py-24 bg-slate-50">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-16">Pertanyaan Umum (FAQ)</h2>
+                <div class="space-y-6">
+                    <div class="p-6 bg-white rounded-xl shadow-sm">
+                        <h4 class="font-bold mb-2">Apakah CyberSafe cocok untuk bisnis kecil?</h4>
+                        <p class="text-slate-600 text-sm">Tentu. Kami memiliki paket yang disesuaikan dengan skala bisnis, dari UMKM hingga korporasi besar.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm">
+                        <h4 class="font-bold mb-2">Berapa lama proses audit keamanan berlangsung?</h4>
+                        <p class="text-slate-600 text-sm">Untuk audit awal biasanya memakan waktu 3-7 hari kerja tergantung kompleksitas sistem Anda.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm">
+                        <h4 class="font-bold mb-2">Apakah data kami akan bocor saat pengetesan?</h4>
+                        <p class="text-slate-600 text-sm">Keamanan data klien adalah prioritas kami. Kami bekerja dengan protokol NDA yang ketat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [BAGIAN 9: FINAL CTA] -->
+        <section class="py-24 px-4 bg-white text-center">
+            <div class="max-w-5xl mx-auto bg-indigo-600 p-12 rounded-[3rem] text-white">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Siap Membangun Benteng Digital yang Tak Terkalahkan?</h2>
+                <p class="mb-10 text-lg opacity-90">Konsultasikan kebutuhan keamanan Anda dengan pakar kami secara gratis hari ini.</p>
+                <button class="px-10 py-5 rounded-full bg-white text-indigo-600 text-xl font-bold shadow-xl">Hubungi Tim Ahli Sekarang</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- [PAGE: FITUR] -->
+    <main id="page-fitur" class="hidden-page">
+        <section class="pt-40 pb-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Fitur Dashboard CyberSafe</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-lg">Keamanan tingkat korporat yang didesain semudah lampu indikator mobil.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="custom-card p-8 rounded-3xl flex gap-6 items-start">
+                        <div class="shrink-0 w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-radar"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Vulnerability Scanner</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Secara otomatis memeriksa website bisnis Anda untuk menemukan celah plugin kedaluwarsa.</p>
+                        </div>
+                    </div>
+                    <div class="custom-card p-8 rounded-3xl flex gap-6 items-start">
+                        <div class="shrink-0 w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-mask"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Data Breach Monitor</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Memantau apakah email karyawan muncul di Dark Web atau database kebocoran global.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <button onclick="showPage('home')" class="text-indigo-600 font-bold hover:underline"> Kembali ke Beranda</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [PAGE: KEBIJAKAN PRIVASI] -->
+    <main id="page-privasi" class="hidden-page">
+        <section class="pt-40 pb-20 px-4 bg-slate-50">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-3xl shadow-sm prose">
+                <h1 class="text-3xl font-bold text-slate-900 mb-8">Kebijakan Privasi</h1>
+                <p class="text-sm text-slate-400 mb-8 font-medium italic">Terakhir diperbarui: 24 Desember 2025</p>
+                
+                <h3>1. Informasi yang Kami Kumpulkan</h3>
+                <p>Kami mengumpulkan informasi yang Anda berikan secara langsung kepada kami saat mendaftar untuk konsultasi atau layanan, termasuk nama, nama perusahaan, alamat email, dan nomor telepon.</p>
+                
+                <h3>2. Penggunaan Informasi</h3>
+                <p>Informasi yang kami kumpulkan digunakan untuk menyediakan, memelihara, dan meningkatkan layanan kami, serta untuk berkomunikasi dengan Anda mengenai pembaruan keamanan dan penawaran layanan.</p>
+                
+                <h3>3. Keamanan Data</h3>
+                <p>CyberSafe menerapkan standar keamanan industri yang ketat untuk melindungi informasi Anda dari akses, penggunaan, atau pengungkapan yang tidak sah. Kami menggunakan enkripsi data di semua level penyimpanan dan pengiriman.</p>
+                
+                <h3>4. Berbagi Informasi</h3>
+                <p>Kami tidak akan menjual, menyewakan, atau memberikan informasi pribadi Anda kepada pihak ketiga tanpa izin eksplisit Anda, kecuali diwajibkan oleh hukum yang berlaku di Indonesia.</p>
+
+                <div class="mt-12 pt-8 border-t">
+                    <button onclick="showPage('home')" class="btn-primary px-8 py-3 rounded-full font-bold">Kembali ke Beranda</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [PAGE: SYARAT & KETENTUAN] -->
+    <main id="page-syarat" class="hidden-page">
+        <section class="pt-40 pb-20 px-4 bg-slate-50">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-3xl shadow-sm prose">
+                <h1 class="text-3xl font-bold text-slate-900 mb-8">Syarat & Ketentuan</h1>
+                <p class="text-sm text-slate-400 mb-8 font-medium italic">Versi: 1.0.2 - Efektif per November 2025</p>
+                
+                <h3>1. Penerimaan Ketentuan</h3>
+                <p>Dengan mengakses situs ini atau menggunakan layanan kami, Anda setuju untuk terikat oleh Syarat dan Ketentuan ini dan semua hukum dan peraturan yang berlaku.</p>
+                
+                <h3>2. Lisensi Penggunaan</h3>
+                <p>CyberSafe memberikan lisensi terbatas untuk menggunakan alat dashboard dan laporan keamanan hanya untuk keperluan internal bisnis Anda sesuai dengan paket layanan yang dipilih.</p>
+                
+                <h3>3. Batasan Tanggung Jawab</h3>
+                <p>Meskipun kami berusaha keras untuk memberikan keamanan terbaik, dunia siber terus berkembang. CyberSafe tidak bertanggung jawab atas kerugian tidak langsung yang timbul dari insiden siber baru yang belum teridentifikasi (zero-day attacks), namun kami berkomitmen memberikan respon insiden tercepat.</p>
+                
+                <h3>4. Pembatalan Layanan</h3>
+                <p>Anda dapat menghentikan langganan layanan pemantauan 24/7 kami dengan pemberitahuan minimal 30 hari sebelum periode penagihan berikutnya berakhir.</p>
+
+                <div class="mt-12 pt-8 border-t">
+                    <button onclick="showPage('home')" class="btn-primary px-8 py-3 rounded-full font-bold">Setuju & Kembali</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [PAGE: KARIR] -->
+    <main id="page-karir" class="hidden-page">
+        <section class="pt-40 pb-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Bergabung dengan Elite Defense Team</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-lg">Bantu kami melindungi ekosistem digital Indonesia dari ancaman siber masa depan.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <div class="custom-card p-8 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Full-Time</span>
+                            <h4 class="text-xl font-bold mt-2">Security Researcher</h4>
+                            <p class="text-slate-500 text-sm mt-1">Yogyakarta / Remote</p>
+                        </div>
+                        <button class="text-indigo-600 font-bold">Lamar <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                    <div class="custom-card p-8 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full">Contract</span>
+                            <h4 class="text-xl font-bold mt-2">Penetration Tester</h4>
+                            <p class="text-slate-500 text-sm mt-1">Project Based</p>
+                        </div>
+                        <button class="text-indigo-600 font-bold">Lamar <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                    <div class="custom-card p-8 rounded-2xl flex justify-between items-center">
+                        <div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Full-Time</span>
+                            <h4 class="text-xl font-bold mt-2">SOC Analyst (Tier 1)</h4>
+                            <p class="text-slate-500 text-sm mt-1">Yogyakarta</p>
+                        </div>
+                        <button class="text-indigo-600 font-bold">Lamar <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 rounded-3xl p-10 text-center">
+                    <h5 class="text-xl font-bold mb-4">Tidak menemukan posisi yang cocok?</h5>
+                    <p class="text-slate-600 mb-6 italic">Kirimkan CV terbuka Anda ke hrd@cybersafe.id - Kami selalu mencari talenta berbakat!</p>
+                    <button onclick="showPage('home')" class="text-indigo-600 font-bold hover:underline">Kembali ke Beranda</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [BAGIAN 10: FOOTER] -->
+    <footer class="py-12 px-4 border-t border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 text-center md:text-left">
+            <div>
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-6 cursor-pointer" onclick="showPage('home')">
+                    <i class="fas fa-shield-halved text-indigo-600 text-xl"></i>
+                    <span class="text-xl font-bold text-slate-900">CyberSafe</span>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">Partner terpercaya untuk keamanan siber bisnis Anda di Indonesia.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Kontak Kami</h5>
+                <ul class="space-y-4 text-sm text-slate-600">
+                    <li><i class="fab fa-whatsapp text-indigo-600 mr-2"></i> +62 812-0909-3344</li>
+                    <li><i class="far fa-envelope text-indigo-600 mr-2"></i> info@cybersafe.id</li>
+                    <li><i class="fas fa-location-dot text-indigo-600 mr-2"></i> Yogyakarta, Indonesia</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Tautan Penting</h5>
+                <ul class="space-y-4 text-sm text-slate-600">
+                    <li><a onclick="showPage('privasi')" class="hover:text-indigo-600 cursor-pointer">Kebijakan Privasi</a></li>
+                    <li><a onclick="showPage('syarat')" class="hover:text-indigo-600 cursor-pointer">Syarat & Ketentuan</a></li>
+                    <li><a onclick="showPage('karir')" class="hover:text-indigo-600 cursor-pointer">Karir</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Ikuti Kami</h5>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-x-twitter text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t text-center text-xs text-slate-400">
+            &copy; 2024 CyberSafe Indonesia. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Sembunyikan semua page main
+            const allPages = document.querySelectorAll('main');
+            allPages.forEach(p => p.classList.add('hidden-page'));
+
+            // Reset active link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(l => l.classList.remove('active-link'));
+
+            // Tampilkan page yang dipilih
+            const targetPage = document.getElementById('page-' + pageId);
+            if(targetPage) {
+                targetPage.classList.remove('hidden-page');
+            }
+
+            // Atur active state di nav bar (hanya untuk Home & Fitur)
+            if (pageId === 'home') {
+                document.getElementById('nav-home').classList.add('active-link');
+            } else if (pageId === 'fitur') {
+                document.getElementById('nav-fitur').classList.add('active-link');
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /**
+         * Fungsi untuk menangani scroll ke section di halaman home
+         */
+        function scrollToSection(sectionId) {
+            const homePage = document.getElementById('page-home');
+            
+            // Jika sedang tidak di halaman home, balik ke home dulu
+            if (homePage.classList.contains('hidden-page')) {
+                showPage('home');
+            }
+
+            // Beri sedikit jeda agar DOM ter-render jika baru saja pindah halaman
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const offset = 80; // Offset untuk navbar fixed
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = element.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 50);
+        }
+    </script>
+</body>
+</html>
